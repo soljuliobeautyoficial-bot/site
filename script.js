@@ -42,15 +42,15 @@ const SERVICOS = [
 // Galeria: coloque suas fotos na pasta "img" e ajuste os nomes.
 // Enquanto a foto não existir, aparece um quadro elegante no lugar.
 const GALERIA = [
-  { src: "img/ponytailbaixo.jpeg",     cat: "Penteados",  titulo: "Ponytail baixo" },
-  { src: "img/semi.jpeg",              cat: "Penteados",  titulo: "Semi preso com detalhes" },
-  { src: "img/maquiagemsocial.jpeg",   cat: "Maquiagem",  titulo: "Maquiagem social" },
-  { src: "img/maquiagem2.jpeg",        cat: "Maquiagem",  titulo: "Maquiagem express" },
-  { src: "img/trança.jpeg",            cat: "Penteados",  titulo: "Trança" },
-  { src: "img/ponytailcomtranca.jpeg", cat: "Penteados",  titulo: "Ponytail com trança" },
-  { src: "img/penteado.jpeg",          cat: "Penteados",  titulo: "Penteado" },
-  { src: "img/escovamodelada.jpeg",    cat: "Escova",     titulo: "Escova modelada" },
-  { src: "img/semipreso.jpeg",         cat: "Penteados",  titulo: "Semi preso" }
+  { src: "ponytailbaixo.jpeg",     cat: "Penteados",  titulo: "Ponytail baixo" },
+  { src: "semi.jpeg",              cat: "Penteados",  titulo: "Semi preso com detalhes" },
+  { src: "maquiagemsocial.jpeg",   cat: "Maquiagem",  titulo: "Maquiagem social" },
+  { src: "maquiagem2.jpeg",        cat: "Maquiagem",  titulo: "Maquiagem express" },
+  { src: "trança.jpeg",            cat: "Penteados",  titulo: "Trança" },
+  { src: "ponytailcomtranca.jpeg", cat: "Penteados",  titulo: "Ponytail com trança" },
+  { src: "penteado.jpeg",          cat: "Penteados",  titulo: "Penteado" },
+  { src: "escovamodelada.jpeg",    cat: "Escova",     titulo: "Escova modelada" },
+  { src: "semipreso.jpeg",         cat: "Penteados",  titulo: "Semi preso" }
 ];
 
 const FAQ = [
