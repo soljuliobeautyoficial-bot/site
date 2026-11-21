@@ -356,6 +356,7 @@ function initIntro() {
   const encerrar = rapido => {
     if (fim) return;
     fim = true;
+    if (!rapido) { audio.pause(); }
     if (rapido) intro.classList.add("intro--skip");
     setTimeout(() => {
       intro.remove();
@@ -363,11 +364,48 @@ function initIntro() {
     }, rapido ? 600 : 0);
   };
 
+  /* ---- Som da abertura (audio/01.mp3) ---- */
+  const audio = new Audio("audio/01.mp3");
+  audio.preload = "auto";
+  audio.volume = 0.9;
+  let somPendente = false; // navegador bloqueou o som até o primeiro toque
+
+  const dica = document.createElement("p");
+  dica.className = "intro__som";
+  dica.textContent = "🔊 Toque para ativar o som";
+  dica.hidden = true;
+  $(".intro__inner", intro).appendChild(dica);
+
+  const ativarSom = () => {
+    somPendente = false;
+    audio.muted = false;
+    audio.play().catch(() => {}); // se ainda não estava tocando, começa agora
+    dica.remove();
+  };
+
+  const fadeSom = ms => {
+    const passo = audio.volume / (ms / 40);
+    const f = setInterval(() => {
+      audio.volume = Math.max(0, audio.volume - passo);
+      if (audio.volume <= 0.01) { clearInterval(f); audio.pause(); }
+    }, 40);
+  };
+
+  audio.play().catch(() => {
+    // o navegador não deixa tocar com som sem interação: toca mudo, sincronizado,
+    // e libera o som no primeiro toque do visitante
+    audio.muted = true;
+    audio.play().catch(() => {});
+    somPendente = true;
+    dica.hidden = false;
+  });
+  audio.addEventListener("error", () => { somPendente = false; dica.remove(); });
+
   const timer = setTimeout(() => encerrar(false), DURACAO);
-  const pular = () => { clearTimeout(timer); encerrar(true); };
+  const pular = () => { clearTimeout(timer); fadeSom(500); encerrar(true); };
 
   $("#introSkip").addEventListener("click", e => { e.stopPropagation(); pular(); });
-  intro.addEventListener("click", pular);
+  intro.addEventListener("click", () => { somPendente ? ativarSom() : pular(); });
   document.addEventListener("keydown", e => { if (e.key === "Escape") pular(); });
 }
 

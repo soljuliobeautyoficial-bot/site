@@ -461,6 +461,12 @@ em { font-style: italic; color: var(--rose); }
 }
 @keyframes introFade { to { opacity: 1; } }
 
+.intro__som {
+  margin: 22px 0 0; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--rose);
+  animation: introSom 1.6s ease-in-out infinite;
+}
+@keyframes introSom { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
+
 .intro__spark {
   position: absolute; left: var(--x); top: var(--y);
   width: 6px; height: 6px; border-radius: 50%;
