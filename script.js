@@ -348,7 +348,7 @@ function initIntro() {
   letras($(".intro__beauty", intro));
 
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const DURACAO = reduce ? 1800 : 20000; // 20 segundos (mude aqui se quiser)
+  const DURACAO = reduce ? 1800 : 10000; // 10 segundos (mude aqui se quiser)
   let fim = false;
 
   document.body.style.overflow = "hidden";
