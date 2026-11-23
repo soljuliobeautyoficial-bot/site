@@ -52,7 +52,9 @@ const GALERIA = [
   { src: "img/escovamodelada.jpeg",    cat: "Escova",       titulo: "Escova modelada" },
   { src: "img/semipreso.jpeg",         cat: "Penteados",    titulo: "Semi preso" },
   { src: "img/sombracelha.jpeg",       cat: "Sobrancelhas", titulo: "Sobrancelha" },
-  { src: "img/sombracelha2.jpeg",      cat: "Sobrancelhas", titulo: "Sobrancelha" }
+  { src: "img/sombracelha3.jpeg",      cat: "Sobrancelhas", titulo: "Sobrancelha" },
+  { src: "img/sombracelha4.jpeg",      cat: "Sobrancelhas", titulo: "Sobrancelha" },
+  { src: "img/sombracelha5.jpeg",     cat: "Sobrancelhas", titulo: "Sobrancelha" },
 ];
 
 const FAQ = [
